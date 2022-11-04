@@ -1,6 +1,6 @@
 # Odapi
 
-Odapi stands for "Outils D'Aide aux Placements et Invistissements" (Tool Helping for Placements and Investments in french)
+Odapi stands for "Outils D'Aide aux Placements et Invistissements" (Help Tool for Placements and Investments, in French 🇫🇷)
 
 ## Available Scripts
 
