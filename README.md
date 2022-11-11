@@ -1,6 +1,6 @@
-# Ocapi Calculator
+# Odapi
 
-Ocapi stands for "Outil de CAlcul Pour Invistissements" (Tool to Compute Investments, in French 🇫🇷)
+Odapi stands for "Outil D'Aide Pour Invistissements" (help tool for Investments, in French 🇫🇷)
 
 ## Available Scripts
 
