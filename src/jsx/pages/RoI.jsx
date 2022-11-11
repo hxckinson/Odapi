@@ -5,4 +5,4 @@ function RoI(){
     <div> Test RoI </div>)
 }
 
-export default RoI
+export default RoI;
