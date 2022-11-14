@@ -3,11 +3,21 @@ import Tooltip from '@mui/material/Tooltip';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import {Link} from "react-router-dom";
+import {useContext} from 'react'
+import {AppContext} from '../../App'
 
-function AddCardButton(props){
-    const [anchorEl, setAnchorEl] = useState(null);
+function AddCardButton(){
+
+    const {
+      global_state,
+      addRoI,
+      } = useContext(AppContext)
+
+    const [anchorEl, setAnchorEl] = useState();
+
     const open = Boolean(anchorEl);
     const handleClick = (e) => {
+      console.debug(e.currentTarget)
         setAnchorEl(e.currentTarget);
       };
     const handleClose = () => {
@@ -25,7 +35,7 @@ function AddCardButton(props){
           onClose={handleClose}
           onClick={handleClose}
           PaperProps={{
-            elevation: 0,
+            elevation: 1,
             sx: {
               overflow: 'visible',
               filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
@@ -39,7 +49,7 @@ function AddCardButton(props){
                 height: 10,
                 bgcolor: 'background.paper',
                 transform: 'translateY(-50%) rotate(45deg)',
-                zIndex: 0,
+                zIndex: 1,
               },
             },
           }}
@@ -49,7 +59,7 @@ function AddCardButton(props){
           anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
         >
           <MenuItem>
-            <Link to='/RoI' className = "app-link">Calcul du RoI</Link>
+            <Link to='/RoI' className = "app-link" onClick={()=>addRoI({})}>Calcul du RoI</Link>
           </MenuItem>
           <MenuItem>
             <Link to='/depart' className = "app-link">Calcul de la somme de départ</Link>

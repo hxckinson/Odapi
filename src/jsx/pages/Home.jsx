@@ -2,6 +2,7 @@ import AddCardButton from '../components/buttons/AddCardButton';
 import empty from '../../assets/pictures/empty_safe.png';
 
 function Home(){
+    
     return (
         <div>
             <div id = "empty-safe">

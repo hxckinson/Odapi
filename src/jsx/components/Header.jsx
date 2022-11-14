@@ -23,7 +23,7 @@ function Header(props){
                     onClick = {props.closeNavbar}>
                         close
                 </span> 
-                <span className = "header-title"> Ocapi Calculator </span>
+                <span className = "header-title"> Odapi Calculator </span>
             </h1>
         </header>
     )
