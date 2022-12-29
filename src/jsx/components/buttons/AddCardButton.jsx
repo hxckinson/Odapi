@@ -6,15 +6,15 @@ import {Link} from "react-router-dom";
 import {useContext} from 'react'
 import {AppContext} from '../../App'
 
-function AddCardButton(){
+function AddCardButton(props){
 
     const {
-      global_state,
-      addRoI,
+
+      addCard,
       } = useContext(AppContext)
 
     const [anchorEl, setAnchorEl] = useState();
-
+    const {page} =props;
     const open = Boolean(anchorEl);
     const handleClick = (e) => {
       console.debug(e.currentTarget)
@@ -58,18 +58,22 @@ function AddCardButton(){
             horizontal: 145, }}
           anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
         >
+          {(page === 'home' || page === 'RoI') &&
           <MenuItem>
-            <Link to='/RoI' className = "app-link" onClick={()=>addRoI({})}>Calcul du RoI</Link>
-          </MenuItem>
+            <Link to='/RoI' className = "app-link" onClick={()=>addCard({key:'RoI',value:{}})}>Calcul du RoI</Link>
+          </MenuItem>}
+          {(page === 'home' || page === 'depart') &&
           <MenuItem>
-            <Link to='/depart' className = "app-link">Calcul de la somme de départ</Link>
-          </MenuItem>
+            <Link to='/depart' className = "app-link"onClick={()=>addCard({key:'depart',value:{}})}>Calcul de la somme de départ</Link>
+          </MenuItem>}
+          {(page === 'home' || page === 'iterations') &&
           <MenuItem>
-            <Link to='/iterations' className = "app-link">Calcul du nombre d'itérations</Link>
-          </MenuItem>
+            <Link to='/iterations' className = "app-link" onClick={()=>addCard({key:'iterations',value:{}})}>Calcul du nombre d'itérations</Link>
+          </MenuItem>}
+          {(page === 'home' || page === 'ratio') &&
           <MenuItem>
-            <Link to='/ratio' className = "app-link">Calcul du taux par iération</Link>
-          </MenuItem>
+            <Link to='/ratio' className = "app-link"onClick={()=>addCard({key:'ratio',value:{}})}>Calcul du taux par itération</Link>
+          </MenuItem>}
         </Menu>
   </>
         )   

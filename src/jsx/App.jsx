@@ -5,9 +5,11 @@ import '../assets/css/Calculator.css';
 import {React,useReducer, createContext} from 'react';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import NavBar from './components/NavBar';
-import Home   from './pages/Home';
-import CalculatorPage  from './pages/CalculatorPage';
 import Header from './components/Header';
+import Home            from './pages/Home';
+import CalculatorPage  from './pages/CalculatorPage';
+import Page            from './pages/Page';
+
 import {createMemoryHistory} from 'history';
 
 const initialState = {
@@ -20,16 +22,15 @@ const initialState = {
 
 function reducer(state, action) {
   switch (action.type) {
-    case 'addRoI':
+    case 'addCard':
       console.debug('global_sate:',state)
-      return {...state, RoI : [...state.RoI,action.payload] };
+      return {...state, [action.payload.key] : [...state[action.payload.key],action.payload.value] };
     default:
       throw new Error("Action undefined");
   }
 }
 
 export const AppContext = createContext();
-
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const history = createMemoryHistory();
@@ -37,8 +38,8 @@ function App() {
 
   const value = {
     global_state: state,
-    addRoI: (payload) => {
-      dispatch({ type: 'addRoI', payload:payload });
+    addCard: (payload) => {
+      dispatch({ type: 'addCard', payload:payload });
     },
     
   };
@@ -61,8 +62,12 @@ function App() {
                 onClick = {closeNavbar} />}
           <div className ="page-content">
             <Routes>
-              <Route exact path="/" element = {<Home/>}/>
+              <Route exact path="/"           element = {<Home/>}/>
               <Route exact path="/calculator" element = {<CalculatorPage/>}/>
+              <Route exact path="/RoI"        element = {<Page pageType = 'RoI' pageTitle = 'Retours sur investissements'/>}/>
+              <Route exact path="/depart"     element = {<Page pageType = 'depart' pageTitle = 'Somme(s) de départ'/>}/>
+              <Route exact path="/iterations" element = {<Page pageType = 'iterations' pageTitle = 'Iterations'/>}/>
+              <Route exact path="/ratio"      element = {<Page pageType = 'ratio' pageTitle = 'Taux par itération'/>}/>
             </Routes>
           </div>
         </div>
