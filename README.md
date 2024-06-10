@@ -1,3 +1,4 @@
+![preview](odapi-screenshot.png)
 # Odapi
 
 Odapi stands for "Outil D'Aide Pour Invistissements" (help tool for Investments, in French 🇫🇷)
