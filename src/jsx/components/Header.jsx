@@ -2,11 +2,16 @@ import React from 'react';
 
 function Header(props){
     const openNavbar = () => {
-        document.getElementById("navbar").style.display = "block";
-        if(!props.web_version) document.getElementById("overlay").style.display = "block";
-        document.getElementById("close-navbar-icon").style.display = "block";
-        document.getElementById("open-navbar-icon").style.display = "none";
-      }
+        const navbar = document.getElementById("navbar");
+        const overlay = document.getElementById("overlay");
+        const closeIcon = document.getElementById("close-navbar-icon");
+        const openIcon = document.getElementById("open-navbar-icon");
+        
+        if (navbar) navbar.style.display = "block";
+        if (overlay) overlay.style.display = "block";
+        if (closeIcon) closeIcon.style.display = "block";
+        if (openIcon) openIcon.style.display = "none";
+    }
 
     return (
         <header className="w3-container app-header">
@@ -14,13 +19,15 @@ function Header(props){
                 <span 
                     id = "open-navbar-icon" 
                     className = "material-icons header-icon w3-xlarge"
-                    onClick = {openNavbar}> 
+                    onClick = {openNavbar}
+                    style={{ cursor: 'pointer' }}> 
                         menu 
                 </span>
                 <span 
                     id = "close-navbar-icon" 
                     className = "material-icons header-icon w3-xlarge"
-                    onClick = {props.closeNavbar}>
+                    onClick = {props.closeNavbar}
+                    style={{ cursor: 'pointer' }}>
                         close
                 </span> 
                 <span className = "header-title"> Odapi Calculator </span>

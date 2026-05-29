@@ -53,11 +53,16 @@
   background-color:#282c34;
 }
 #overlay{
-  display:block;
+  display:none;
   position:fixed;
   z-index:2;
-  opacity:0.5;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
 }
+
 #overlay:hover{
   cursor:pointer;
 }
@@ -73,26 +78,53 @@
 .page{
   
 }
+
 #empty-safe{
   opacity: 0.3;
   position: absolute;
   top:100px;
   z-index: -1;
-  
+  left: 50%;
+  transform: translateX(-50%);
 }
+
 #empty-safe-icon{
   position: relative;
-  left:-30%;
+  left: 0;
   width: 250px;
+  margin: 0 auto;
+  display: block;
 }
+
+#no-content{
+  opacity: 0.3;
+  text-align: center;
+  margin-top: 10px;
+}
+
 .page-content{
   position: relative;
   left: 45%;
- 
+  width: 50%;
 }
-#no-content{
-  opacity: 0.3;
+
+@media (max-width: 768px) {
+  .page-content {
+    left: 0;
+    width: 100%;
+    padding: 10px;
+  }
+
+  #empty-safe{
+    left: 50%;
+    top: 80px;
+  }
+
+  #empty-safe-icon{
+    width: 150px;
+  }
 }
+
 /*-------------------------------- Card ------------------------------------*/
 .generic-card{
   position:relative;
@@ -127,4 +159,313 @@
   width: 98%;
   position: relative;
   top: -10px;
+}
+
+/*-------------------------------- Responsive Design ------------------------------------*/
+
+/* Tablets and smaller screens (tablet: 768px and below) */
+@media (max-width: 768px) {
+  /* Hide navbar by default on small screens */
+  #navbar {
+    display: none;
+  }
+
+  /* Show the open navbar button */
+  #open-navbar-icon {
+    display: block !important;
+  }
+
+  /* Hide the close button by default */
+  #close-navbar-icon {
+    display: none !important;
+  }
+
+  /* Adjust header title position */
+  .header-title {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Adjust page title positioning */
+  .page-title {
+    left: 0;
+    position: relative;
+    top: 10px;
+  }
+
+  /* Adjust generic card positioning */
+  .generic-card {
+    left: 0;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  /* Adjust add button position for small screens */
+  .add-button {
+    left: 85%;
+    top: 90%;
+  }
+}
+
+/* Phones (480px and below) */
+@media (max-width: 480px) {
+  .generic-card {
+    width: 95%;
+  }
+
+  .add-button {
+    left: 80%;
+    top: 90%;
+  }
+
+  .header-title {
+    font-size: 16px;
+  }
+}
+
+/*-------------------------------- Info Section (Home Page) ------------------------------------*/
+
+.info-section {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  margin: 20px auto;
+}
+
+.home-info-container {
+  width: 90%;
+  max-width: 900px;
+}
+
+.info-section h2 {
+  color: #282c34;
+  border-bottom: 3px solid #282c34;
+  padding-bottom: 10px;
+  margin-top: 20px;
+}
+
+.info-section h3 {
+  color: #282c34;
+  margin-top: 20px;
+}
+
+.info-section h4 {
+  color: #555;
+  margin: 10px 0;
+}
+
+.info-section code {
+  background-color: #f0f0f0;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+}
+
+.info-section ul, .info-section ol {
+  margin-left: 20px;
+}
+
+.info-section li {
+  margin: 8px 0;
+}
+
+.info-section strong {
+  color: #282c34;
+  font-weight: 600;
+}
+
+/* Formula and highlight boxes */
+.formula-box {
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 15px 0;
+  border-left: 4px solid #282c34;
+  font-family: 'Courier New', monospace;
+}
+
+.formula-box.highlight {
+  background-color: #f0f0f0;
+  border-left: 4px solid #282c34;
+}
+
+/* Categories grid */
+.categories-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.category-card {
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.category-card h4 {
+  margin-top: 0;
+  color: #282c34;
+}
+
+.category-card p {
+  margin: 10px 0 0 0;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Illustration styling */
+.category-card svg {
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover svg {
+  transform: scale(1.1);
+}
+
+svg {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Table styling for parameter guide */
+.formula-box table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.formula-box tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.formula-box td {
+  border: 1px solid #ccc;
+  padding: 10px 8px;
+  text-align: left;
+}
+
+.formula-box tbody tr:first-child {
+  background-color: #282c34;
+  color: white;
+  font-weight: bold;
+}
+
+.formula-box tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.formula-box tbody tr:hover {
+  background-color: #f0f0f0;
+}
+
+/* Responsive for tablets and mobile */
+@media (max-width: 768px) {
+  .info-section {
+    padding: 15px;
+    font-size: 14px;
+    margin: 15px auto;
+  }
+
+  .home-info-container {
+    width: 95%;
+    max-width: 100%;
+  }
+
+  .info-section h2 {
+    font-size: 18px;
+  }
+
+  .info-section h3 {
+    font-size: 16px;
+  }
+
+  .info-section h4 {
+    font-size: 14px;
+  }
+
+  .categories-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .category-card {
+    padding: 12px;
+  }
+
+  .category-card svg {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .formula-box {
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  .formula-box table {
+    font-size: 11px;
+  }
+
+  .formula-box td {
+    padding: 6px 4px;
+  }
+
+  .info-section ul, .info-section ol {
+    margin-left: 15px;
+    padding-left: 10px;
+  }
+
+  .info-section li {
+    margin: 6px 0;
+    font-size: 13px;
+  }
+}
+
+/* Phones (480px and below) */
+@media (max-width: 480px) {
+  .info-section {
+    padding: 12px;
+    font-size: 12px;
+  }
+
+  .home-info-container {
+    width: 98%;
+  }
+
+  .info-section h2 {
+    font-size: 16px;
+  }
+
+  .info-section h3 {
+    font-size: 14px;
+  }
+
+  .info-section h4 {
+    font-size: 12px;
+  }
+
+  .formula-box {
+    padding: 10px;
+    font-size: 11px;
+  }
+
+  .formula-box table {
+    font-size: 10px;
+  }
+
+  .formula-box td {
+    padding: 4px 2px;
+  }
 }

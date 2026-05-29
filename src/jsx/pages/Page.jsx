@@ -15,8 +15,8 @@ function Page(props){
 
     const renderCards = (cardType) =>{
         let array = []
-        global_state[cardType].map(elt =>{
-            array.push(<Card {...elt}/>);
+        global_state[cardType].map((elt, index) =>{
+            array.push(<Card key={index} {...elt} pageType={cardType} cardIndex={index}/>);
             return 0;
         })
         return  array
@@ -27,7 +27,7 @@ function Page(props){
             global_state[cardType].length === 0 &&
             <div id = "empty-safe">
                 <img id = "empty-safe-icon" src={empty} alt="empty page"/>
-                <h4 id ="no-content">No Content yet ...</h4>
+                <h4 id ="no-content">Aucun contenu pour le moment...</h4>
             </div>
             }
             <h3 className='page-title w3-border-bottom'>{pageTitle}</h3>

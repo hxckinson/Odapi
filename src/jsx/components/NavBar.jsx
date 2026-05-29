@@ -43,13 +43,11 @@ function NavBar(props){
                     <span className = "app-link-icon material-icons">percent</span> Taux par itération
                 </div>
             </Link>
-            {!props.web_version &&
             <Link to='/calculator' className = "app-link">
                 <div id ="calculator-bar-item" className="w3-bar-item w3-button " onClick={()=>setActive("calculator-bar-item")}>
                     <span className = "app-link-icon material-icons"> calculate </span> Calculatrice
                 </div>
             </Link>
-            }
         </nav>
     )
 }
