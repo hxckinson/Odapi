@@ -7,6 +7,7 @@
   position: fixed;
   width: 100%;
   height: 51px;
+  z-index: 10;
 }
 .header-logo{
   filter: invert(1);
@@ -238,6 +239,8 @@
 .home-info-container {
   width: 90%;
   max-width: 900px;
+  margin: 0 auto;
+  padding-top: 60px;
 }
 
 .info-section h2 {
@@ -381,6 +384,8 @@ svg {
   .home-info-container {
     width: 95%;
     max-width: 100%;
+    margin: 0 auto;
+    padding-top: 60px;
   }
 
   .info-section h2 {

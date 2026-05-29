@@ -19,9 +19,7 @@ function Home(){
                 <h4 id ="no-content">Aucun contenu pour le moment...</h4>
             </div>
             }
-            <h3 className='page-title w3-border-bottom'>Accueil</h3>
-            
-            <div className="info-section home-info-container" style={{ maxWidth: '900px', margin: '0 auto' }}>
+            <div className="info-section home-info-container">
                 <h2>À Propos d'Odapi</h2>
                 <p><strong>Odapi</strong> (Outil D'Aide Pour Investissements) est une application pour calculer et analyser vos scénarios d'investissement.</p>
                 
