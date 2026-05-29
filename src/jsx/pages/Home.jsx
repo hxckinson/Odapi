@@ -3,7 +3,7 @@ import AddCardButton from '../components/buttons/AddCardButton';
 import empty from '../../assets/pictures/empty_safe.png';
 import {useContext} from 'react'
 import {AppContext} from '../App'
-import { ChartIllustration, CalculatorIllustration, PersonIllustration, GrowthIllustration, DocumentIllustration } from '../components/Illustrations'
+import { ChartIllustration, CalculatorIllustration, GrowthIllustration, DocumentIllustration } from '../components/Illustrations'
 
 function Home(){
     const {
@@ -80,9 +80,6 @@ function Home(){
                         <p>Calculer quel taux de croissance est nécessaire pour atteindre un ROI cible en un nombre d'itérations donné.</p>
                     </div>
                     <div className="category-card">
-                        <div style={{ textAlign: 'center', marginBottom: '15px' }}>
-                            <PersonIllustration size={60} />
-                        </div>
                         <h4>💰 Somme de départ</h4>
                         <p><strong>Trouve :</strong> Le montant initial (U₀)</p>
                         <p><strong>Donnez :</strong> r, n, et le résultat désiré</p>
@@ -98,10 +95,6 @@ function Home(){
                 
                 <h3>💡 Comment utiliser</h3>
                 <p>Le processus est simple : selon votre besoin, sélectionnez la catégorie appropriée et fournissez les paramètres connus :</p>
-                
-                <div style={{ textAlign: 'center', margin: '25px 0' }}>
-                    <PersonIllustration size={80} />
-                </div>
                 
                 <ol>
                     <li>Cliquez sur le <strong>bouton "+"</strong> en bas à droite</li>

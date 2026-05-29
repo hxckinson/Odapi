@@ -53,33 +53,6 @@ export const CalculatorIllustration = ({ size = 80 }) => (
   </svg>
 );
 
-export const PersonIllustration = ({ size = 80 }) => (
-  <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-    {/* Head */}
-    <circle cx="50" cy="25" r="12" fill="none" stroke="#282c34" strokeWidth="2" />
-    
-    {/* Body */}
-    <line x1="50" y1="37" x2="50" y2="55" stroke="#282c34" strokeWidth="2" strokeLinecap="round" />
-    
-    {/* Left arm */}
-    <line x1="50" y1="42" x2="30" y2="50" stroke="#282c34" strokeWidth="2" strokeLinecap="round" />
-    
-    {/* Right arm */}
-    <line x1="50" y1="42" x2="70" y2="50" stroke="#282c34" strokeWidth="2" strokeLinecap="round" />
-    
-    {/* Legs */}
-    <line x1="50" y1="55" x2="38" y2="75" stroke="#282c34" strokeWidth="2" strokeLinecap="round" />
-    <line x1="50" y1="55" x2="62" y2="75" stroke="#282c34" strokeWidth="2" strokeLinecap="round" />
-    
-    {/* Face - simple dots */}
-    <circle cx="46" cy="22" r="1.5" fill="#282c34" />
-    <circle cx="54" cy="22" r="1.5" fill="#282c34" />
-    
-    {/* Smile */}
-    <path d="M 46 26 Q 50 28 54 26" stroke="#282c34" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-  </svg>
-);
-
 export const GrowthIllustration = ({ size = 80 }) => (
   <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
     {/* Upward arrow */}
@@ -110,7 +83,6 @@ export const DocumentIllustration = ({ size = 80 }) => (
 export default {
   ChartIllustration,
   CalculatorIllustration,
-  PersonIllustration,
   GrowthIllustration,
   DocumentIllustration,
 };
